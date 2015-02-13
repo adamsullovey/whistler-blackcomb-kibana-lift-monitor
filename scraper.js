@@ -68,4 +68,4 @@ var onDataSaved = function (err, response, body) {
 //makeRequest();
 
 // start a timer to load feed every once in a while
-//setInterval(makeRequest, 60000);
+setInterval(makeRequest, 60000);
