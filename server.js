@@ -3,10 +3,13 @@ var express = require('express'),
 
 var app = express();
 
-app.use(express.static('public', {
+app.set('port', (process.env.PORT || 80));
+
+
+app.use(express.static(__dirname + '/public', {
 	etag: true
 }));
 
-var server = app.listen(80, function () {
-	console.log('web server is live');
+var server = app.listen(app.get('port'), function () {
+	console.log("Node app is running at localhost:" + app.get('port'));
 });
