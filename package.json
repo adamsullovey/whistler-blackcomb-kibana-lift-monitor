@@ -1,5 +1,5 @@
 {
-	"name": "WB Lift Monitor",
+	"name": "wb-lift-monitor",
 	"version": "1.0.0",
 	"description": "Show WB Lift Status in Kibana",
 	"main": "server.js",
