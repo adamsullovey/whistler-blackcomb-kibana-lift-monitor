@@ -29,7 +29,10 @@ define(['settings'],
 			 *  +elasticsearch: {server: "http://localhost:9200", withCredentials: true}+
 			 *
 			 */
-			elasticsearch: "http://" + window.location.hostname + ":9200",
+			elasticsearch: {
+				server: "http://" + window.location.hostname + ":9200",
+				withCredentials: true
+			},
 
 			/** @scratch /configuration/config.js/5
 			 *
