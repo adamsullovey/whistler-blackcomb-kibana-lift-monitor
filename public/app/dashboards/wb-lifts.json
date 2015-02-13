@@ -1,0 +1,850 @@
+{
+	"title": "WB Lift Watcher",
+	"services": {
+		"query": {
+			"list": {
+				"0": {
+					"query": "*",
+					"alias": "",
+					"color": "#7EB26D",
+					"id": 0,
+					"pin": false,
+					"type": "lucene",
+					"enable": true
+				},
+				"1": {
+					"id": 1,
+					"type": "lucene",
+					"query": "name:\"7TH HEAVEN EXPRESS\"",
+					"alias": "",
+					"color": "#EAB839",
+					"pin": false,
+					"enable": true
+				},
+				"2": {
+					"id": 2,
+					"color": "#6ED0E0",
+					"alias": "",
+					"pin": false,
+					"type": "lucene",
+					"enable": true,
+					"query": "name:\"CATSKINNER CHAIR\""
+				},
+				"3": {
+					"id": 3,
+					"color": "#E24D42",
+					"alias": "",
+					"pin": false,
+					"type": "lucene",
+					"enable": true,
+					"query": "name:\"CRYSTAL RIDGE EXPRESS\""
+				},
+				"4": {
+					"id": 4,
+					"color": "#E24D42",
+					"alias": "",
+					"pin": false,
+					"type": "lucene",
+					"enable": true,
+					"query": "name:\"EXCALIBUR GONDOLA\""
+				},
+				"5": {
+					"id": 5,
+					"color": "#1F78C1",
+					"alias": "",
+					"pin": false,
+					"type": "lucene",
+					"enable": true,
+					"query": "name:\"EXCELERATOR EXPRESS\""
+				},
+				"6": {
+					"id": 6,
+					"color": "#BA43A9",
+					"alias": "",
+					"pin": false,
+					"type": "lucene",
+					"enable": true,
+					"query": "name:\"GLACIER EXPRESS\""
+				},
+				"7": {
+					"id": 7,
+					"color": "#705DA0",
+					"alias": "",
+					"pin": false,
+					"type": "lucene",
+					"enable": true,
+					"query": "name:\"HORSTMAN T-BAR\""
+				},
+				"8": {
+					"id": 8,
+					"color": "#508642",
+					"alias": "",
+					"pin": false,
+					"type": "lucene",
+					"enable": true,
+					"query": "name:\"JERSEY CREAM EXPRESS\""
+				},
+				"9": {
+					"id": 9,
+					"color": "#CCA300",
+					"alias": "",
+					"pin": false,
+					"type": "lucene",
+					"enable": true,
+					"query": "name:\"MAGIC CHAIR\""
+				},
+				"10": {
+					"id": 10,
+					"color": "#447EBC",
+					"alias": "",
+					"pin": false,
+					"type": "lucene",
+					"enable": true,
+					"query": "name:\"PEAK 2 PEAK GONDOLA\""
+				},
+				"11": {
+					"id": 11,
+					"color": "#C15C17",
+					"alias": "",
+					"pin": false,
+					"type": "lucene",
+					"enable": true,
+					"query": "name:\"SHOWCASE T-BAR\""
+				},
+				"12": {
+					"id": 12,
+					"color": "#890F02",
+					"alias": "",
+					"pin": false,
+					"type": "lucene",
+					"enable": true,
+					"query": "name:\"SOLAR COASTER EXPRESS\""
+				},
+				"13": {
+					"id": 13,
+					"color": "#0A437C",
+					"alias": "",
+					"pin": false,
+					"type": "lucene",
+					"enable": true,
+					"query": "name:\"WIZARD EXPRESS\""
+				},
+				"14": {
+					"id": 14,
+					"color": "#6D1F62",
+					"alias": "",
+					"pin": false,
+					"type": "lucene",
+					"enable": true,
+					"query": "name:\"BIG RED EXPRESS\""
+				},
+				"15": {
+					"id": 15,
+					"color": "#584477",
+					"alias": "",
+					"pin": false,
+					"type": "lucene",
+					"enable": true,
+					"query": "name:\"CREEKSIDE GONDOLA\""
+				},
+				"16": {
+					"id": 16,
+					"color": "#B7DBAB",
+					"alias": "",
+					"pin": false,
+					"type": "lucene",
+					"enable": true,
+					"query": "name:\"EMERALD EXPRESS\""
+				},
+				"17": {
+					"id": 17,
+					"color": "#F4D598",
+					"alias": "",
+					"pin": false,
+					"type": "lucene",
+					"enable": true,
+					"query": "name:\"FITZSIMMONS EXPRESS\""
+				},
+				"18": {
+					"id": 18,
+					"color": "#70DBED",
+					"alias": "",
+					"pin": false,
+					"type": "lucene",
+					"enable": true,
+					"query": "name:\"FRANZ'S CHAIR\""
+				},
+				"19": {
+					"id": 19,
+					"color": "#F9BA8F",
+					"alias": "",
+					"pin": false,
+					"type": "lucene",
+					"enable": true,
+					"query": "name:\"GARBANZO EXPRESS\""
+				},
+				"20": {
+					"id": 20,
+					"color": "#F29191",
+					"alias": "",
+					"pin": false,
+					"type": "lucene",
+					"enable": true,
+					"query": "name:\"HARMONY 6 EXPRESS\""
+				},
+				"21": {
+					"id": 21,
+					"color": "#82B5D8",
+					"alias": "",
+					"pin": false,
+					"type": "lucene",
+					"enable": true,
+					"query": "name:\"OLYMPIC CHAIR\""
+				},
+				"22": {
+					"id": 22,
+					"color": "#E5A8E2",
+					"alias": "",
+					"pin": false,
+					"type": "lucene",
+					"enable": true,
+					"query": "name:\"PEAK EXPRESS\""
+				},
+				"23": {
+					"id": 23,
+					"color": "#AEA2E0",
+					"alias": "",
+					"pin": false,
+					"type": "lucene",
+					"enable": true,
+					"query": "name:\"SYMPHONY EXPRESS\""
+				},
+				"24": {
+					"id": 24,
+					"color": "#629E51",
+					"alias": "",
+					"pin": false,
+					"type": "lucene",
+					"enable": true,
+					"query": "name:\"T-BARS\""
+				},
+				"25": {
+					"id": 25,
+					"color": "#E5AC0E",
+					"alias": "",
+					"pin": false,
+					"type": "lucene",
+					"enable": true,
+					"query": "name:\"WHISTLER VILLAGE GONDOLA\""
+				},
+				"26": {
+					"id": 26,
+					"color": "#64B0C8",
+					"alias": "",
+					"pin": false,
+					"type": "lucene",
+					"enable": true,
+					"query": "name:\"COCA-COLA TUBE PARK\""
+				}
+			},
+			"ids": [
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16,
+				17,
+				18,
+				19,
+				20,
+				21,
+				22,
+				23,
+				24,
+				25,
+				26
+			]
+		},
+		"filter": {
+			"list": {
+				"0": {
+					"type": "time",
+					"field": "@timestamp",
+					"from": "now-12h",
+					"to": "now",
+					"mandate": "must",
+					"active": true,
+					"alias": "",
+					"id": 0
+				},
+				"1": {
+					"type": "querystring",
+					"query": "type:lift-status",
+					"mandate": "must",
+					"active": true,
+					"alias": "",
+					"id": 1
+				}
+			},
+			"ids": [
+				0,
+				1
+			]
+		}
+	},
+	"rows": [{
+		"title": "Boat",
+		"height": "150px",
+		"editable": true,
+		"collapse": false,
+		"collapsable": true,
+		"panels": [{
+			"span": 12,
+			"editable": true,
+			"type": "histogram",
+			"loadingEditor": false,
+			"mode": "max",
+			"time_field": "@timestamp",
+			"value_field": "speed",
+			"x-axis": true,
+			"y-axis": true,
+			"scale": 1,
+			"y_format": "none",
+			"grid": {
+				"max": null,
+				"min": 0
+			},
+			"queries": {
+				"mode": "all",
+				"ids": [
+					0,
+					1,
+					2,
+					3,
+					4,
+					5,
+					6,
+					7,
+					8,
+					9,
+					10,
+					11,
+					12,
+					13,
+					14,
+					15,
+					16,
+					17,
+					18,
+					19,
+					20,
+					21,
+					22,
+					23,
+					24,
+					25,
+					26
+				]
+			},
+			"annotate": {
+				"enable": false,
+				"query": "*",
+				"size": 20,
+				"field": "_type",
+				"sort": [
+					"_score",
+					"desc"
+				]
+			},
+			"auto_int": true,
+			"resolution": 100,
+			"interval": "5m",
+			"intervals": [
+				"auto",
+				"1s",
+				"1m",
+				"5m",
+				"10m",
+				"30m",
+				"1h",
+				"3h",
+				"12h",
+				"1d",
+				"1w",
+				"1y"
+			],
+			"lines": true,
+			"fill": 1,
+			"linewidth": 3,
+			"points": false,
+			"pointradius": 5,
+			"bars": false,
+			"stack": false,
+			"spyable": true,
+			"zoomlinks": true,
+			"options": true,
+			"legend": true,
+			"show_query": true,
+			"interactive": true,
+			"legend_counts": true,
+			"timezone": "browser",
+			"percentage": false,
+			"zerofill": false,
+			"derivative": false,
+			"tooltip": {
+				"value_type": "cumulative",
+				"query_as_alias": true
+			},
+			"title": "Speed"
+		}],
+		"notice": false
+	}, {
+		"title": "Wait",
+		"height": "150px",
+		"editable": true,
+		"collapse": false,
+		"collapsable": true,
+		"panels": [{
+			"span": 12,
+			"editable": true,
+			"type": "histogram",
+			"loadingEditor": false,
+			"mode": "max",
+			"time_field": "@timestamp",
+			"value_field": "waitstatusid",
+			"x-axis": true,
+			"y-axis": true,
+			"scale": 1,
+			"y_format": "none",
+			"grid": {
+				"max": null,
+				"min": 0
+			},
+			"queries": {
+				"mode": "all",
+				"ids": [
+					0,
+					1,
+					2,
+					3,
+					4,
+					5,
+					6,
+					7,
+					8,
+					9,
+					10,
+					11,
+					12,
+					13,
+					14,
+					15,
+					16,
+					17,
+					18,
+					19,
+					20,
+					21,
+					22,
+					23,
+					24,
+					25,
+					26
+				]
+			},
+			"annotate": {
+				"enable": false,
+				"query": "*",
+				"size": 20,
+				"field": "_type",
+				"sort": [
+					"_score",
+					"desc"
+				]
+			},
+			"auto_int": true,
+			"resolution": 100,
+			"interval": "5m",
+			"intervals": [
+				"auto",
+				"1s",
+				"1m",
+				"5m",
+				"10m",
+				"30m",
+				"1h",
+				"3h",
+				"12h",
+				"1d",
+				"1w",
+				"1y"
+			],
+			"lines": true,
+			"fill": 0,
+			"linewidth": 3,
+			"points": false,
+			"pointradius": 5,
+			"bars": false,
+			"stack": false,
+			"spyable": true,
+			"zoomlinks": true,
+			"options": true,
+			"legend": true,
+			"show_query": true,
+			"interactive": true,
+			"legend_counts": true,
+			"timezone": "browser",
+			"percentage": false,
+			"zerofill": false,
+			"derivative": false,
+			"tooltip": {
+				"value_type": "cumulative",
+				"query_as_alias": true
+			},
+			"title": "Wait"
+		}],
+		"notice": false
+	}, {
+		"title": "pies",
+		"height": "150px",
+		"editable": true,
+		"collapse": false,
+		"collapsable": true,
+		"panels": [{
+			"span": 4,
+			"editable": true,
+			"type": "hits",
+			"loadingEditor": false,
+			"style": {
+				"font-size": "10pt"
+			},
+			"arrangement": "horizontal",
+			"chart": "bar",
+			"counter_pos": "above",
+			"donut": false,
+			"tilt": false,
+			"labels": true,
+			"spyable": true,
+			"queries": {
+				"mode": "all",
+				"ids": [
+					0,
+					1,
+					2,
+					3,
+					4,
+					5,
+					6,
+					7,
+					8,
+					9,
+					10,
+					11,
+					12,
+					13,
+					14,
+					15,
+					16,
+					17,
+					18,
+					19,
+					20,
+					21,
+					22,
+					23,
+					24,
+					25,
+					26
+				]
+			}
+		}, {
+			"error": false,
+			"span": 4,
+			"editable": true,
+			"type": "terms",
+			"loadingEditor": false,
+			"field": "waitstatus",
+			"exclude": [],
+			"missing": true,
+			"other": true,
+			"size": 10,
+			"order": "count",
+			"style": {
+				"font-size": "10pt"
+			},
+			"donut": false,
+			"tilt": false,
+			"labels": true,
+			"arrangement": "horizontal",
+			"chart": "pie",
+			"counter_pos": "above",
+			"spyable": true,
+			"queries": {
+				"mode": "all",
+				"ids": [
+					0,
+					1,
+					2,
+					3,
+					4,
+					5,
+					6,
+					7,
+					8,
+					9,
+					10,
+					11,
+					12,
+					13,
+					14,
+					15,
+					16,
+					17,
+					18,
+					19,
+					20,
+					21,
+					22,
+					23,
+					24,
+					25,
+					26
+				]
+			},
+			"tmode": "terms",
+			"tstat": "total",
+			"valuefield": ""
+		}, {
+			"error": false,
+			"span": 4,
+			"editable": true,
+			"type": "stats",
+			"loadingEditor": false,
+			"queries": {
+				"mode": "all",
+				"ids": [
+					0,
+					1,
+					2,
+					3,
+					4,
+					5,
+					6,
+					7,
+					8,
+					9,
+					10,
+					11,
+					12,
+					13,
+					14,
+					15,
+					16,
+					17,
+					18,
+					19,
+					20,
+					21,
+					22,
+					23,
+					24,
+					25,
+					26
+				]
+			},
+			"style": {
+				"font-size": "24pt"
+			},
+			"format": "number",
+			"mode": "variance",
+			"display_breakdown": "yes",
+			"sort_field": "mean",
+			"sort_reverse": true,
+			"label_name": "Query",
+			"value_name": "Value",
+			"spyable": true,
+			"show": {
+				"count": false,
+				"min": true,
+				"max": true,
+				"mean": true,
+				"std_deviation": false,
+				"sum_of_squares": false,
+				"total": false,
+				"variance": true
+			},
+			"field": "speed",
+			"unit": "m/s"
+		}],
+		"notice": false
+	}, {
+		"title": "table",
+		"height": "150px",
+		"editable": true,
+		"collapse": false,
+		"collapsable": true,
+		"panels": [{
+			"error": false,
+			"span": 12,
+			"editable": true,
+			"type": "table",
+			"loadingEditor": false,
+			"size": 100,
+			"pages": 5,
+			"offset": 0,
+			"sort": [
+				"speed",
+				"desc"
+			],
+			"overflow": "min-height",
+			"fields": [
+				"name",
+				"speed",
+				"@timestamp"
+			],
+			"highlight": [],
+			"sortable": true,
+			"header": true,
+			"paging": true,
+			"field_list": true,
+			"all_fields": true,
+			"trimFactor": 300,
+			"localTime": false,
+			"timeField": "@timestamp",
+			"spyable": true,
+			"queries": {
+				"mode": "all",
+				"ids": [
+					0,
+					1,
+					2,
+					3,
+					4,
+					5,
+					6,
+					7,
+					8,
+					9,
+					10,
+					11,
+					12,
+					13,
+					14,
+					15,
+					16,
+					17,
+					18,
+					19,
+					20,
+					21,
+					22,
+					23,
+					24,
+					25,
+					26
+				]
+			},
+			"style": {
+				"font-size": "9pt"
+			},
+			"normTimes": true
+		}],
+		"notice": false
+	}],
+	"editable": true,
+	"failover": false,
+	"index": {
+		"interval": "none",
+		"pattern": "YYYY-MM-DDTHH:mm:ssZ",
+		"default": "_all",
+		"warm_fields": true
+	},
+	"style": "dark",
+	"panel_hints": true,
+	"pulldowns": [{
+		"type": "query",
+		"collapse": false,
+		"notice": false,
+		"enable": true,
+		"query": "*",
+		"pinned": true,
+		"history": [
+			"name:\"COCA-COLA TUBE PARK\"",
+			"name:\"WHISTLER VILLAGE GONDOLA\"",
+			"name:\"T-BARS\"",
+			"name:\"SYMPHONY EXPRESS\"",
+			"name:\"PEAK EXPRESS\"",
+			"name:\"OLYMPIC CHAIR\"",
+			"name:\"HARMONY 6 EXPRESS\"",
+			"name:\"GARBANZO EXPRESS\"",
+			"name:\"FRANZ'S CHAIR\"",
+			"name:\"FITZSIMMONS EXPRESS\""
+		],
+		"remember": 10
+	}, {
+		"type": "filtering",
+		"collapse": false,
+		"notice": true,
+		"enable": true
+	}],
+	"nav": [{
+		"type": "timepicker",
+		"collapse": false,
+		"notice": false,
+		"enable": true,
+		"status": "Stable",
+		"time_options": [
+			"5m",
+			"15m",
+			"1h",
+			"6h",
+			"12h",
+			"24h",
+			"2d",
+			"7d",
+			"30d"
+		],
+		"refresh_intervals": [
+			"5s",
+			"10s",
+			"30s",
+			"1m",
+			"5m",
+			"15m",
+			"30m",
+			"1h",
+			"2h",
+			"1d"
+		],
+		"timefield": "@timestamp",
+		"now": true,
+		"filter_id": 0
+	}],
+	"loader": {
+		"save_gist": false,
+		"save_elasticsearch": true,
+		"save_local": true,
+		"save_default": true,
+		"save_temp": true,
+		"save_temp_ttl_enable": true,
+		"save_temp_ttl": "30d",
+		"load_gist": false,
+		"load_elasticsearch": true,
+		"load_elasticsearch_size": 20,
+		"load_local": false,
+		"hide": false
+	},
+	"refresh": false
+}

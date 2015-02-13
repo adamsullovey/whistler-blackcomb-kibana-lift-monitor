@@ -47,7 +47,7 @@ define(['settings'],
 			 *
 			 * default_route: '/dashboard/elasticsearch/WebLogs',
 			 */
-			default_route: '/dashboard/file/default.json',
+			default_route: '/dashboard/file/wb-lifts.json',
 
 			/** @scratch /configuration/config.js/5
 			 *
