@@ -262,7 +262,7 @@
 				"0": {
 					"type": "time",
 					"field": "@timestamp",
-					"from": "now-15m",
+					"from": "now-6h",
 					"to": "now",
 					"mandate": "must",
 					"active": true,
@@ -348,7 +348,7 @@
 			},
 			"auto_int": true,
 			"resolution": 100,
-			"interval": "10s",
+			"interval": "5m",
 			"intervals": [
 				"auto",
 				"1s",
@@ -452,7 +452,7 @@
 			},
 			"auto_int": true,
 			"resolution": 100,
-			"interval": "10s",
+			"interval": "5m",
 			"intervals": [
 				"auto",
 				"1s",
@@ -814,5 +814,5 @@
 		"load_local": false,
 		"hide": false
 	},
-	"refresh": false
+	"refresh": "15m"
 }
