@@ -1,16 +1,67 @@
 var parseString = require('xml2js').parseString,
-	request = require('request');
+	request = require('request'),
+	crypto = require('crypto')
 
+// load the feed
+var makeRequest = function () {
+	request('https://secure.whistlerblackcomb.com/ls/lifts.aspx', onStatusLoaded);
+};
+
+// when the feed has loaded, parse it
 var onStatusLoaded = function (err, result, body) {
+	if (err) throw err;
 	parseString(body, onXmlParse);
 };
 
+// when parsed, reformat data and save it to ES
 var onXmlParse = function (err, result) {
+	if (err) throw err;
 	var stuff = (result.Lifts.Lift).map(function (result) {
+		// fix unepxected formatting from XML2JS
 		return result.$;
-	});
+	}).map(function (data) {
 
-	console.log(stuff);
+		// lets manioulate stuff!
+		// ES needs everything to have a unique ID, a type, and logstash-style timestamps are handy
+		data._id = crypto.createHash('sha1').update(data.name + new Date()).digest('hex');
+		data.type = 'lift-status';
+		data['@timestamp'] = new Date();
+
+		// force these to be numbers so they can be graphed in kibana
+		data.speed = Number(data.speed);
+		data.avgspeed = Number(data.avgspeed);
+		data.waitstatusid = Number(data.waitstatusid);
+
+		return data;
+	}).forEach(saveData);
+
+	//saveData(stuff);
+
 };
 
-request('https://secure.whistlerblackcomb.com/ls/lifts.aspx', onStatusLoaded);
+// save the data
+var saveData = function (data) {
+	console.log('data', data);
+
+	var requestOptions = {
+		url: process.env.BONSAI_URL + '/wb-lift-data/' + data.type + '/' + data._id,
+		json: data,
+	};
+
+	//console.log(data);
+
+	request.post(requestOptions, onDataSaved);
+
+};
+
+// when saved, log it
+var onDataSaved = function (err, response, body) {
+	if (err) throw err;
+	console.log('saved', body);
+};
+
+
+//makeRequest();
+
+// start a timer to load feed every one in a while
+setInterval(makeRequest, 60000);
