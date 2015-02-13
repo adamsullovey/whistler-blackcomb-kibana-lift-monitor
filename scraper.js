@@ -1,6 +1,6 @@
 var parseString = require('xml2js').parseString,
 	request = require('request'),
-	crypto = require('crypto')
+	crypto = require('crypto');
 
 // load the feed
 var makeRequest = function () {
@@ -21,16 +21,19 @@ var onXmlParse = function (err, result) {
 		return result.$;
 	}).map(function (data) {
 
-		// lets manioulate stuff!
+		// lets manipulate data!
 		// ES needs everything to have a unique ID, a type, and logstash-style timestamps are handy
-		data._id = crypto.createHash('sha1').update(data.name + new Date()).digest('hex');
+		data._id = crypto.createHash('md5').update(data.name + Number(new Date())).digest('hex');
 		data.type = 'lift-status';
 		data['@timestamp'] = new Date();
 
-		// force these to be numbers so they can be graphed in kibana
+		// cast these to numbers so they can be graphed in kibana
 		data.speed = Number(data.speed);
 		data.avgspeed = Number(data.avgspeed);
 		data.waitstatusid = Number(data.waitstatusid);
+
+		// not using this field, so delete it
+		delete(data.LiftGUID);
 
 		return data;
 	}).forEach(saveData);
@@ -63,5 +66,5 @@ var onDataSaved = function (err, response, body) {
 
 //makeRequest();
 
-// start a timer to load feed every one in a while
+// start a timer to load feed every once in a while
 setInterval(makeRequest, 60000);
