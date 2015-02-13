@@ -1,0 +1,16 @@
+{
+  "name": "wb-lift-status",
+  "version": "0.0.0",
+  "description": "",
+  "main": "scraper.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "request": "~2.53.0",
+    "xml2js": "~0.4.5",
+    "express": "~4.11.2"
+  }
+}
