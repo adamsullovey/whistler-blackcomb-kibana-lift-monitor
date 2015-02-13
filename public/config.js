@@ -31,7 +31,6 @@ define(['settings'],
 			 */
 			elasticsearch: {
 				server: "http://" + window.location.hostname + ":9200",
-				withCredentials: true,
 				headers: {
 					"Authorization": "Basic loginhashhere"
 				}
