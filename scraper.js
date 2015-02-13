@@ -28,12 +28,13 @@ var onXmlParse = function (err, result) {
 		data['@timestamp'] = new Date();
 
 		// cast these to numbers so they can be graphed in kibana
-		data.speed = Number(data.speed);
-		data.avgspeed = Number(data.avgspeed);
+		// kibana rounds numbers. Move the decimal place over to see more details and still see relative speeds
+		data.speed = Number(data.speed) * 10;
 		data.waitstatusid = Number(data.waitstatusid);
 
 		// not using this field, so delete it
 		delete(data.LiftGUID);
+		delete(data.avgspeed);
 
 		return data;
 	}).forEach(saveData);
@@ -67,4 +68,4 @@ var onDataSaved = function (err, response, body) {
 //makeRequest();
 
 // start a timer to load feed every once in a while
-setInterval(makeRequest, 60000);
+//setInterval(makeRequest, 60000);
