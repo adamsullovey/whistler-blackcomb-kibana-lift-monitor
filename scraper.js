@@ -1,5 +1,5 @@
 var parseString = require('xml2js').parseString,
-	q = require('Q'),
+	q = require('q'),
 	http = require('q-io/http'),
 	crypto = require('crypto');
 
