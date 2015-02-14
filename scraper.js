@@ -1,67 +1,95 @@
 var parseString = require('xml2js').parseString,
-	request = require('request'),
+	q = require('Q'),
+	http = require('q-io/http'),
 	crypto = require('crypto');
 
 // load the feed
 var makeRequest = function () {
-	request('https://secure.whistlerblackcomb.com/ls/lifts.aspx', onStatusLoaded);
+
+	var saveToElasticSearchPromises = http.read('https://secure.whistlerblackcomb.com/ls/lifts.aspx')
+		.then(onStatusLoaded)
+		.then(onXmlParse);
+
+
+	q.allSettled(saveToElasticSearchPromises)
+		.then(console.log)
+		.then(null, function (error) {
+			console.log('scraper error:', error);
+		});
 };
 
 // when the feed has loaded, parse it
-var onStatusLoaded = function (err, result, body) {
-	if (err) throw err;
-	parseString(body, onXmlParse);
+var onStatusLoaded = function (responseBody) {
+	return q.nfcall(parseString, responseBody);
 };
 
 // when parsed, reformat data and save it to ES
-var onXmlParse = function (err, result) {
-	if (err) throw err;
-	var stuff = (result.Lifts.Lift).map(function (result) {
-		// fix unepxected formatting from XML2JS
-		return result.$;
-	}).map(function (data) {
+var onXmlParse = function (result) {
 
-		// lets manipulate data!
-		// ES needs everything to have a unique ID, a type, and logstash-style timestamps are handy
-		data._id = crypto.createHash('md5').update(data.name + Number(new Date())).digest('hex');
-		data.type = 'lift-status';
-		data['@timestamp'] = new Date();
+	var data = result.Lifts.Lift.map(function (result) {
+			// fix unepxected formatting from XML2JS
+			return result.$;
+		})
+		.map(transformDataForElasticSearch);
 
-		// cast these to numbers so they can be graphed in kibana
-		// kibana rounds numbers. Move the decimal place over to see more details and still see relative speeds
-		data.speed = Number(data.speed) * 10;
-		data.waitstatusid = Number(data.waitstatusid);
-
-		// not using this field, so delete it
-		delete(data.LiftGUID);
-		delete(data.avgspeed);
-
-		return data;
-	}).forEach(saveData);
-
-	//saveData(stuff);
+	return data.map(saveData);
 
 };
 
-// save the data
-var saveData = function (data) {
-	console.log('data', data);
+// manipulate data to get it from the parsed XML to something ready for ES
+var transformDataForElasticSearch = function (data) {
+	// ES needs everything to have a unique _id, a type, and logstash-style timestamps are handy
+	data._id = crypto.createHash('md5').update(data.name + Number(new Date())).digest('hex');
+	data.type = 'lift-status';
+	data['@timestamp'] = new Date();
 
-	var requestOptions = {
-		url: process.env.BONSAI_URL + '/wb-lift-data/' + data.type + '/' + data._id,
-		json: data,
+	// cast these to numbers so they can be graphed in kibana
+	// kibana rounds numbers. Move the decimal place over to see more details and still see relative speeds
+	data.speed = Number(data.speed) * 10;
+	data.waitstatusid = Number(data.waitstatusid);
+
+	// not using these fields
+	delete(data.LiftGUID);
+	delete(data.avgspeed);
+
+	return data;
+
+};
+
+// save each bit of info from the parsed XML
+var saveData = function (data) {
+
+	var json = JSON.stringify(data);
+	var requestUrl = process.env.BONSAI_URL + '/wb-lift-data/' + data.type + '/' + data._id;
+
+	var requestOptions = http.normalizeRequest(requestUrl);
+
+	requestOptions.body = [json];
+	requestOptions.method = 'post';
+	requestOptions.headers = {
+		'Content-Type': 'application/json',
+		'Content-Length': json.length
 	};
 
-	//console.log(data);
+	//console.log('should post: ', requestOptions);
 
-	request.post(requestOptions, onDataSaved);
+	return http.request(requestOptions)
+		.then(onDataSaved);
 
 };
 
-// when saved, log it
-var onDataSaved = function (err, response, body) {
-	if (err) throw err;
-	console.log('saved', body);
+// callback for successful HTTP request to ES
+var onDataSaved = function (response) {
+
+	// rebuild the body out of the buffer
+	var responseBody = '';
+	response.body.forEach(function (chunk) {
+		responseBody += chunk.toString();
+	});
+
+
+	// remembering to return promises all the way down the chain
+	return q.when(JSON.parse(responseBody));
 };
 
 
