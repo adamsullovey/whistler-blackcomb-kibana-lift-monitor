@@ -17,5 +17,9 @@
 	},
 	"engines": {
 		"node": "0.12.x"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://git.heroku.com/wb-lift-monitor.git"
 	}
 }
