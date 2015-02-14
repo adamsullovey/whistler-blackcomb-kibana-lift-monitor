@@ -1,8 +1,7 @@
 {
 	"name": "WB Lift Monitor",
-	"description": "Download & parse Whistler Blackcomb's lift status page, move data into an ElasticSearch instance, view data with Kibana hosted by nodejs and Express",
+	"description": "Download & parse Whistler Blackcomb's lift status info, move data into ElasticSearch, view data with Kibana hosted by nodejs and Express",
 	"repository": "https://github.com/adamsullovey/whistler-blackcomb-kibana-lift-monitor.git",
-	"logo": "https://node-js-sample.herokuapp.com/node.svg",
 	"keywords": ["node", "express", "kibana", "elasticsearch"],
 	"success_url": "/",
 	"addons": [
