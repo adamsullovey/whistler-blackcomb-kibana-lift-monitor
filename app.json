@@ -1,0 +1,12 @@
+{
+	"name": "Whistler Blackcomb Lift Monitor",
+	"description": "Scrape WB's lift status page, move data into an ElasticSearch instance, view data with Kibana",
+	"repository": "",
+	"logo": "https://node-js-sample.herokuapp.com/node.svg",
+	"keywords": ["node", "express", "kibana", "elasticsearch"],
+	"success_url": "/",
+	"addons": [
+		"bonsai:starter"
+	]
+
+}
