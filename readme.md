@@ -3,6 +3,8 @@ Whistler Blackomb Lift Monitor
 
 I decided to try loading data from https://secure.whistlerblackcomb.com/ls/lifts.aspx into (ElasticSearch)[http://www.elasticsearch.org/], and view it in [Kibana 3](http://www.elasticsearch.org/overview/kibana/) for fun.
 
+nodejs handles loading the data, and Express serves the static Kibana pages.
+
 ![WB Lift Monitor Screenshot](screenshot.png?raw=true)
 
 Stuff I learned making this
