@@ -1,7 +1,7 @@
 Whistler Blackomb Lift Monitor
 ================
 
-I decided to try loading data from https://secure.whistlerblackcomb.com/ls/lifts.aspx into (ElasticSearch)[http://www.elasticsearch.org/], and view it in [Kibana 3](http://www.elasticsearch.org/overview/kibana/) for fun.
+I decided to try loading data from https://secure.whistlerblackcomb.com/ls/lifts.aspx into [ElasticSearch](http://www.elasticsearch.org/), and view it in [Kibana 3](http://www.elasticsearch.org/overview/kibana/) for fun.
 
 nodejs handles loading the data, and Express serves the static Kibana pages.
 
@@ -41,7 +41,7 @@ When working on my dev machine, I used this to start node with the same BONSAI_U
 
 ### Heroku is fun
 
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/heroku/node-js-sample)
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/adamsullovey/whistler-blackcomb-kibana-lift-monitor)
 
 If this runs on a free dyno, the process that scrapes data and serves Kibana will shut down if it doesn't receive any HTTP requests, and no data will be scraped.
 
