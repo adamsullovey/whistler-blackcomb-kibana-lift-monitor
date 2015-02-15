@@ -4,7 +4,7 @@
 	"repository": "https://github.com/adamsullovey/whistler-blackcomb-kibana-lift-monitor.git",
 	"keywords": ["node", "express", "kibana", "elasticsearch"],
 	"success_url": "/",
-	"logo": "https://raw.githubusercontent.com/adamsullovey/whistler-blackcomb-kibana-lift-monitor/master/icon.svg?raw=true",
+	"logo": "https://cdn.rawgit.com/adamsullovey/whistler-blackcomb-kibana-lift-monitor/master/icon.svg?raw=true",
 	"addons": [
 		"bonsai:starter"
 	]
