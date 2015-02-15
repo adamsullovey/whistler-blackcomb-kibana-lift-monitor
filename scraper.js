@@ -3,10 +3,13 @@ var parseString = require('xml2js').parseString,
 	http = require('q-io/http'),
 	crypto = require('crypto');
 
+const REFRESH_INTERVAL = 60000,
+	FEED_URL = 'https://secure.whistlerblackcomb.com/ls/lifts.aspx';
+
 // load the feed
 var makeRequest = function () {
 
-	var saveToElasticSearchPromises = http.read('https://secure.whistlerblackcomb.com/ls/lifts.aspx')
+	var saveToElasticSearchPromises = http.read(FEED_URL)
 		.then(onStatusLoaded)
 		.then(onXmlParse);
 
@@ -93,7 +96,8 @@ var onDataSaved = function (response) {
 };
 
 
-//makeRequest();
+// make 1 request right away
+makeRequest();
 
 // start a timer to load feed every once in a while
-setInterval(makeRequest, 60000);
+setInterval(makeRequest, REFRESH_INTERVAL);
