@@ -3,7 +3,7 @@ Whistler Blackomb Lift Monitor
 
 I decided to try loading data from https://secure.whistlerblackcomb.com/ls/lifts.aspx into [ElasticSearch](http://www.elasticsearch.org/), and view it in [Kibana 3](http://www.elasticsearch.org/overview/kibana/) for fun.
 
-nodejs handles loading the data, and Express serves the static Kibana pages.
+nodejs handles downloading the data and putting it into ElasticSearch, and Express serves the static Kibana pages.
 
 ![WB Lift Monitor Screenshot](screenshot.png?raw=true)
 
@@ -12,9 +12,9 @@ Stuff I learned making this
 
 ### Kibana isn't great for this purpose
 
-Overlapping lines on graphs hide data. Users can't tell exactly which lifts are closed since the last one in the list of queries covers up the other lines.
+Overlapping lines on graphs hide data. Users can't tell exactly which lifts are closed by looking at the graphs because the last queried lift covers up the other lines at the same Y value.
 
-[Kibana rounds numbers to whole numbers](https://github.com/elasticsearch/kibana/issues/697), so the speed graph/histogram loses precision. Combine that with the overlapping lines mentioned above, and the graph becomes less useful. I had to multiply speeds by before loading them into ElasticSearch (speeds are in dm/s instead of m/s), otherwise all the lifts appear only have about 4 different speeds in the graph.
+[Kibana rounds numbers to whole numbers](https://github.com/elasticsearch/kibana/issues/697), so the speed graph/histogram loses precision. Combine that with the overlapping lines mentioned above, and the graph becomes less useful. I had to multiply speeds by 10 before loading them into ElasticSearch (speeds are in dm/s instead of m/s), otherwise all the lifts appear only have about 4 different speeds in the graph.
 
 Still, looking at the colourful squiggly lines is fun during opening and closing time on weekends.
 
@@ -37,13 +37,14 @@ BONSAI_URL=https://name:password@server-name.bonsai.io npm start
 ```
 When working on my dev machine, I used this to start node with the same BONSAI_URL environment variable set that Heroku has.
 
-
-
 ### Heroku is fun
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/adamsullovey/whistler-blackcomb-kibana-lift-monitor)
 
-If this runs on a free dyno, the process that scrapes data and serves Kibana will shut down if it doesn't receive any HTTP requests, and no data will be scraped.
+Things to note when you deploy this:
+
+1. The default time range in the Kibana dashboard is 6 hours, so it takes ~15 minutes to save enough data for the graphs to populate.
+2. If this runs on a free dyno, the process that scrapes data and serves Kibana will sleep if it doesn't receive any HTTP requests, and no data will be scraped. No data means blank spots in the graphs. You can refresh the page with the browser's refresh button (not Kibana's refresh button, which only makes a request to the ElasticSearch server), or set up another service to ping the app's URL occasionally to stop the process from sleeping.
 
 Other stuff to add?
 -------
