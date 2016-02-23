@@ -30,7 +30,7 @@ curl -X DELETE 'https://name:password@server-name.bonsai.io/index-name'
 curl -X POST 'https://name:password@server-name.bonsai.io/index-name'
 ```
 
-These work great together to remove and recreate an index. Very handy when you to clear data out of 1 ElasticSearch index.
+These work great together to remove and recreate an index. Very handy to clear data out of 1 ElasticSearch index.
 
 ```bash
 BONSAI_URL=https://name:password@server-name.bonsai.io npm start
